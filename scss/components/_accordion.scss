@@ -1,0 +1,112 @@
+.accordion {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  margin-top: 10rem;
+  width: 305px;
+
+  @include mq(large) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    padding-right: 8rem;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  &__img {
+    margin-top: -12rem;
+    position: relative;
+
+    @include mq(large) {
+      margin-top: 0;
+      width: 400px;
+    }
+
+    img {
+      background-image: url(../../images/bg-pattern-mobile.svg);
+      background-position: top 0% left 44%;
+      background-size: cover;
+
+      @include mq(large) {
+        background-image: url(../../images/bg-pattern-desktop.svg);
+        padding: 9rem 0;
+        background-position: right -1% top 68%;
+        background-size: initial;
+        margin-left: -6rem;
+      }
+    }
+
+    .img-arroba {
+      display: none;
+      @include mq(large) {
+        display: block;
+        position: absolute;
+        top: 8rem;
+        left: -2rem;
+        z-index: 100;
+      }
+    }
+  }
+
+  &__content {
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin: 2.5rem 0;
+      color: $very-dark-desaturated-blue;
+    }
+
+    @include mq(large) {
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__item {
+    @include mq(large) {
+      width: 330px;
+    }
+
+    .content-show {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+      cursor: pointer;
+
+      h3 {
+        font-weight: 300;
+        font-size: 1rem;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: $soft-red;
+        }
+
+        @include mq(large) {
+          font-size: 1.1rem;
+        }
+      }
+
+      button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      padding: 0.5rem 0;
+      color: $dark-grayish-blue;
+      line-height: 1.4;
+      display: none;
+      transition: all 3s ease-in-out;
+    }
+
+    .show {
+      display: block;
+    }
+  }
+}
