@@ -100,34 +100,38 @@ body {
   @media (min-width: 1024px) {
     .accordion__content {
       padding-bottom: 5rem; } }
-  @media (min-width: 1024px) {
-    .accordion__item {
-      width: 330px; } }
-  .accordion__item .content-show {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.7rem 0;
-    cursor: pointer; }
-    .accordion__item .content-show h3 {
-      font-weight: 300;
-      font-size: 1rem;
-      transition: color 0.2s ease-in-out; }
-      .accordion__item .content-show h3:hover {
-        color: #f47c57; }
-      @media (min-width: 1024px) {
-        .accordion__item .content-show h3 {
-          font-size: 1.1rem; } }
-    .accordion__item .content-show button {
-      border: none;
-      background: transparent;
+  .accordion__item {
+    overflow: hidden;
+    height: 3rem;
+    border-bottom: thin solid #787887;
+    margin-bottom: 0.5rem; }
+    .accordion__item.collapse {
+      height: auto; }
+    @media (min-width: 1024px) {
+      .accordion__item {
+        width: 330px; } }
+    .accordion__item .content-show {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.7rem 0;
       cursor: pointer; }
-  .accordion__item p {
-    padding: 0.5rem 0;
-    color: #787887;
-    line-height: 1.4;
-    display: none;
-    transition: all 3s ease-in-out; }
-  .accordion__item .show {
-    display: block; }
+      .accordion__item .content-show h3 {
+        font-weight: 300;
+        font-size: 1rem;
+        transition: color 0.2s ease-in-out; }
+        .accordion__item .content-show h3:hover {
+          color: #f47c57; }
+        @media (min-width: 1024px) {
+          .accordion__item .content-show h3 {
+            font-size: 1.1rem; } }
+      .accordion__item .content-show button {
+        border: none;
+        background: transparent;
+        cursor: pointer; }
+    .accordion__item p {
+      padding: 0.75rem 0 1rem 0;
+      color: #787887;
+      line-height: 1.4;
+      transition: all 3s ease-in-out; }
 
 /*# sourceMappingURL=styles.css.map */

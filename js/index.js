@@ -1,16 +1,39 @@
-// const button = [...document.querySelectorAll("button.arrow-show")];
-const button = [...document.querySelectorAll(".content-show")];
-const paragraph = [...document.querySelectorAll("p.parrafo")];
-const h3 = [...document.querySelectorAll(".content-show h3")];
+const accordionItems = [...document.querySelectorAll(".accordion__item")];
 
-button.map((btn, index) => {
-  btn.addEventListener("click", (e) => {
-    paragraph[index].classList.toggle("show");
+function loopIncrease(start, number) {
+  for (let i = start; i <= number; i++) {
+    accordionItems[i + 1].classList.remove("collapse");
+  }
+}
 
-    if (paragraph[index].classList.value.includes("show")) {
-      h3[index].style.fontWeight = "700";
-    } else {
-      h3[index].style.fontWeight = "300";
+function loopDecrease(start, number) {
+  for (let i = number; i >= start; i--) {
+    accordionItems[i - 1].classList.remove("collapse");
+  }
+}
+
+for (let i = 0; i < accordionItems.length; i++) {
+  accordionItems[i].addEventListener("click", (e) => {
+    if (i === 0) {
+      accordionItems[i].classList.toggle("collapse");
+      loopIncrease(0, 4);
+    } else if (i === 1) {
+      accordionItems[i].classList.toggle("collapse");
+      accordionItems[i - 1].classList.remove("collapse");
+      loopIncrease(1, 4);
+    } else if (i === 2) {
+      accordionItems[i].classList.toggle("collapse");
+      accordionItems[i - 1].classList.remove("collapse");
+      accordionItems[i - 2].classList.remove("collapse");
+      // loopDecrease(0, 2);
+      loopIncrease(2, 4);
+    } else if (i === 3) {
+      accordionItems[i].classList.toggle("collapse");
+      accordionItems[i + 1].classList.remove("collapse");
+      loopDecrease(0, 3);
+    } else if (i === 4) {
+      accordionItems[i].classList.toggle("collapse");
+      loopDecrease(0, 4);
     }
   });
-});
+}

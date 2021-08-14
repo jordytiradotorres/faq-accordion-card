@@ -66,6 +66,15 @@
   }
 
   &__item {
+    overflow: hidden;
+    height: 3rem;
+    border-bottom: thin solid $dark-grayish-blue;
+    margin-bottom: 0.5rem;
+
+    &.collapse {
+      height: auto;
+    }
+
     @include mq(large) {
       width: 330px;
     }
@@ -98,15 +107,10 @@
     }
 
     p {
-      padding: 0.5rem 0;
+      padding: 0.75rem 0 1rem 0;
       color: $dark-grayish-blue;
       line-height: 1.4;
-      display: none;
       transition: all 3s ease-in-out;
-    }
-
-    .show {
-      display: block;
     }
   }
 }
