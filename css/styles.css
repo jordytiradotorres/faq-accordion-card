@@ -102,11 +102,13 @@ body {
       padding-bottom: 5rem; } }
   .accordion__item {
     overflow: hidden;
-    height: 3rem;
     border-bottom: thin solid #787887;
     margin-bottom: 0.5rem; }
     .accordion__item.collapse {
-      height: auto; }
+      overflow: initial; }
+    .accordion__item.collapse p {
+      height: auto;
+      padding: 0.75rem 0 1rem 0; }
     @media (min-width: 1024px) {
       .accordion__item {
         width: 330px; } }
@@ -129,9 +131,10 @@ body {
         background: transparent;
         cursor: pointer; }
     .accordion__item p {
-      padding: 0.75rem 0 1rem 0;
+      height: 0;
+      overflow-y: hidden;
       color: #787887;
       line-height: 1.4;
-      transition: all 3s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
 
 /*# sourceMappingURL=styles.css.map */

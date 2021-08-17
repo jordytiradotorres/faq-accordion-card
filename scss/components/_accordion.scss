@@ -67,12 +67,16 @@
 
   &__item {
     overflow: hidden;
-    height: 3rem;
     border-bottom: thin solid $dark-grayish-blue;
     margin-bottom: 0.5rem;
 
     &.collapse {
+      overflow: initial;
+    }
+
+    &.collapse p {
       height: auto;
+      padding: 0.75rem 0 1rem 0;
     }
 
     @include mq(large) {
@@ -107,10 +111,11 @@
     }
 
     p {
-      padding: 0.75rem 0 1rem 0;
+      height: 0;
+      overflow-y: hidden;
       color: $dark-grayish-blue;
       line-height: 1.4;
-      transition: all 3s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
   }
 }
